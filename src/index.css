@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-brand-black antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-black text-white px-8 py-4 font-bold text-lg transition-all hover:bg-brand-cyan hover:scale-[1.02] active:scale-95 inline-block text-center;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-brand-black text-brand-black px-8 py-4 font-bold text-lg transition-all hover:bg-brand-black hover:text-white hover:scale-[1.02] active:scale-95 inline-block text-center;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100;
+  }
+}
+
+/* Custom Utilities */
+.text-gradient-cyan {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan to-blue-600;
+}
+
+.bg-mesh {
+  background-color: #ffffff;
+  background-image: radial-gradient(at 0% 0%, hsla(197,100%,47%,0.05) 0, transparent 50%), 
+                    radial-gradient(at 100% 0%, hsla(327,100%,46%,0.05) 0, transparent 50%);
+}
