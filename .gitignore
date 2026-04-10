@@ -1,6 +1,7 @@
 node_modules/
 dist/
 _dist_/
+.hostinger-deploy/
 .DS_Store
 .env
 .env.local
