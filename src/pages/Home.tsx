@@ -29,7 +29,7 @@ const Home = () => {
       title: "Picture Frames", 
       icon: <LayoutGrid className="text-brand-cyan" size={32} />,
       /* IMAGE: Picture Frames Service Card */
-      image: "/images/whatsapp/frame1.jpeg",
+      image: "/images/num3.jpeg",
       alt: "Durable and vibrant wall-frames made in Kumasi",
       desc: "Transform your favorite memories into stunning wall decor with our premium framing.",
       link: "/services/picture-frame"

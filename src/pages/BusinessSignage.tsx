@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
+import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
@@ -167,6 +168,7 @@ const BusinessSignage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {signageServices.map((service, i) => (
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
+                <ImageLightbox src={service.image} alt={service.title} label={`Open ${service.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={service.image} 
@@ -181,6 +183,7 @@ const BusinessSignage = () => {
                     })}
                   </div>
                 </div>
+                </ImageLightbox>
                 <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{service.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{service.desc}</p>

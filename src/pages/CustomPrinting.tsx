@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
+import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageCircle, Palette, Gift, Package, Briefcase, Sparkles, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -126,6 +127,7 @@ const CustomPrinting = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {customExamples.map((example, i) => (
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
+                <ImageLightbox src={example.image} alt={example.title} label={`Open ${example.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={example.image} 
@@ -140,6 +142,7 @@ const CustomPrinting = () => {
                     })}
                   </div>
                 </div>
+                </ImageLightbox>
                 <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{example.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{example.desc}</p>

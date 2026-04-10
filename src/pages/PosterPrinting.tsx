@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
+import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
@@ -44,42 +45,42 @@ const PosterPrinting = () => {
       title: "Event Posters", 
       icon: <Calendar className="text-brand-cyan" />, 
       /* IMAGE: Event Poster Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/bf/77/eb/bf77eb254045a14c8478db4475dc0769.jpg",
       desc: "High-impact posters for concerts, church programs, and community events in Kumasi." 
     },
     { 
       title: "Advertising Posters", 
       icon: <Megaphone className="text-brand-magenta" />, 
       /* IMAGE: Advertising Poster Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/9c/49/80/9c4980dd6228bdfca44fc82791c78901.jpg",
       desc: "Professional posters to promote your products and services in high-traffic areas." 
     },
     { 
       title: "Promotional Posters", 
       icon: <Zap className="text-brand-yellow" />, 
       /* IMAGE: Promotional Poster Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/ba/3b/4f/ba3b4fb6d0c95409d3114866dfae6c64.jpg",
       desc: "Eye-catching designs for sales, grand openings, and special business offers." 
     },
     { 
       title: "Educational Posters", 
       icon: <School className="text-brand-cyan" />, 
       /* IMAGE: Educational Poster Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+      image: "https://www.oscarr.org/images/Vasec-7.png",
       desc: "Informative posters for schools, training centers, and awareness campaigns." 
     },
     { 
       title: "Decorative Posters", 
       icon: <Palette className="text-brand-magenta" />, 
       /* IMAGE: Decorative Poster Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/32/8a/e1/328ae15cfad01472b7812dab6dcd943f.jpg",
       desc: "Custom posters for home or office decor, featuring high-resolution art." 
     },
     { 
       title: "Custom Sizes", 
       icon: <Layers className="text-brand-yellow" />, 
       /* IMAGE: Custom Size Poster Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/44/42/b0/4442b0d8f62b20e9e2ee890dcc295764.jpg",
       desc: "Tailored dimensions to fit your specific display frames and spaces." 
     }
   ];
@@ -179,6 +180,7 @@ const PosterPrinting = () => {
           >
             {posterTypes.map((type, i) => (
               <motion.div key={i} variants={itemVariants} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
+                <ImageLightbox src={type.image} alt={type.title} label={`Open ${type.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={type.image} 
@@ -193,6 +195,7 @@ const PosterPrinting = () => {
                     })}
                   </div>
                 </div>
+                </ImageLightbox>
                 <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{type.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{type.desc}</p>

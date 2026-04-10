@@ -10,7 +10,7 @@ const Blog = () => {
       excerpt: "A detailed guide on pricing for vinyl and mesh banners in the Ashanti region, including factors that affect the final cost.",
       category: "Pricing",
       date: "April 5, 2026",
-      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
+      image: "https://www.gflesch.com/hubfs/2020_website/images/large_format_printer.jpg",
       alt: "Professional banner printing in Kumasi, Ghana",
       link: "/blog/banner-printing-cost-kumasi"
     },
@@ -19,7 +19,7 @@ const Blog = () => {
       excerpt: "Discover creative ways to use custom stickers and labels to enhance your product packaging and brand visibility in Ghana.",
       category: "Branding",
       date: "March 28, 2026",
-      image: "https://images.unsplash.com/photo-1605648916319-cf082f7524a1?auto=format&fit=crop&w=800&q=80",
+      image: "https://customlabels.net/wp-content/uploads/2017/08/business-stickers-4.jpg",
       alt: "Custom product labels and stickers for Ghanaian brands",
       link: "/blog"
     },
@@ -28,7 +28,7 @@ const Blog = () => {
       excerpt: "Learn why branded apparel is essential for events, churches, and schools, and how to choose the right printing method.",
       category: "Marketing",
       date: "March 15, 2026",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/1200x/dd/c0/07/ddc00798e5bdf2080c57738cd5aa24f3.jpg",
       alt: "Branded t-shirts for events in Kumasi, Ghana",
       link: "/blog"
     },
@@ -37,7 +37,7 @@ const Blog = () => {
       excerpt: "Explore the impact of professional storefront branding on customer attraction and trust for local retail shops.",
       category: "Business",
       date: "March 02, 2026",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
+      image: "https://printplanetghana.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-11-at-7.40.11-PM-1-edited.jpeg",
       alt: "Professional shop signage in Kumasi, Ghana",
       link: "/blog"
     },

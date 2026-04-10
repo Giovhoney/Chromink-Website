@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
+import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageCircle, Shirt, Users, Church, School, ShoppingBag, Zap, Palette, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -152,6 +153,7 @@ const TShirtPrinting = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {orderTypes.map((order, i) => (
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
+                <ImageLightbox src={order.image} alt={order.title} label={`Open ${order.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
                   <img 
                     src={order.image} 
@@ -166,6 +168,7 @@ const TShirtPrinting = () => {
                     })}
                   </div>
                 </div>
+                </ImageLightbox>
                 <div className="p-10 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{order.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{order.desc}</p>

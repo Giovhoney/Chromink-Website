@@ -44,7 +44,7 @@ const Services = () => {
       title: "Picture Frames", 
       icon: <LayoutGrid className="text-brand-cyan" size={32} />,
       /* IMAGE: Banner Printing Service Card - Authentic Ghanaian Context */
-      image: "/images/whatsapp/9.jpeg",
+      image: "https://i.pinimg.com/1200x/3a/62/6f/3a626f766f31426b30c82be7fbf3a22b.jpg",
       alt: "Durable and colour vibrant wall-frames made you in Kumasi",
       desc: "Print your favorite picture on your wall. Just contact us and you will have picture frame same day to put on your wall", 
       link: "/services/picture-frame" 
@@ -62,7 +62,7 @@ const Services = () => {
       title: "Business Signage", 
       icon: <Printer className="text-brand-yellow" size={32} />,
       /* IMAGE: Business Signage Service Card - Authentic Ghanaian Context */
-      image: "/images/service-signage.png",
+      image: "https://i.pinimg.com/1200x/89/bd/13/89bd13e3867275c9e031187250b60ad2.jpg",
       alt: "Professional 3D illuminated shop signage and branding in Kumasi",
       desc: "Professional shop front signs, 3D letters, and interior branding to make your business stand out.", 
       link: "/services/business-signage" 
@@ -98,7 +98,7 @@ const Services = () => {
       title: "Poster Printing", 
       icon: <Layers className="text-brand-yellow" size={32} />,
       /* IMAGE: Poster Printing Service Card - Authentic Ghanaian Context */
-      image: "/images/poster-sample.png",
+      image: "https://i.pinimg.com/736x/3d/4e/68/3d4e684db7b61884771970b27542cae8.jpg",
       alt: "Vibrant event and advertising poster printing in Kumasi Ghana",
       desc: "Vibrant posters in various sizes for indoor and outdoor displays across the Ashanti region.", 
       link: "/services/poster-printing" 

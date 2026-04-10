@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
+import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
@@ -45,7 +46,7 @@ const PictureFrame = () => {
     { 
       title: "Modern Minimalist", 
       icon: <Maximize className="text-brand-magenta" />, 
-      image: "/images/whatsapp/10.jpeg",
+      image: "/images/num1.jpeg",
       desc: "Sleek, thin-profile frames that put all the focus on your beautiful photos." 
     },
     { 
@@ -57,19 +58,19 @@ const PictureFrame = () => {
     { 
       title: "Collage Frames", 
       icon: <LayoutGrid className="text-brand-cyan" />, 
-      image: "/images/whatsapp/9.jpeg",
+      image: "/images/num2.jpeg",
       desc: "Display multiple memories in a single, beautifully crafted multi-photo frame." 
     },
     { 
       title: "Canvas Wraps", 
       icon: <Maximize className="text-brand-magenta" />, 
-      image: "/images/whatsapp/alice2.jpeg",
+      image: "/images/num4.jpeg",
       desc: "Modern frameless look where the image wraps around the edges for a 3D effect." 
     },
     { 
       title: "Custom Gift Frames", 
       icon: <MessageCircle className="text-brand-yellow" />, 
-      image: "/images/whatsapp/13.jpeg",
+      image: "/images/whatsapp/alice2.jpeg",
       desc: "Perfect for birthdays, weddings, and anniversaries. Personalized to your liking." 
     }
   ];
@@ -181,6 +182,7 @@ const PictureFrame = () => {
           >
             {frameTypes.map((type, i) => (
               <motion.div key={i} variants={itemVariants} className="bg-white group overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500">
+                <ImageLightbox src={type.image} alt={type.title} label={`Open ${type.title} image preview`}>
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img 
                     src={type.image} 
@@ -191,6 +193,7 @@ const PictureFrame = () => {
                     {type.icon}
                   </div>
                 </div>
+                </ImageLightbox>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold uppercase tracking-tight mb-3">{type.title}</h3>
                   <p className="text-gray-600">{type.desc}</p>
