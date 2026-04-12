@@ -23,7 +23,7 @@ fi
 echo "Building production site..."
 npm run build
 
-if [[ ! -d "$DEPLOY_DIR/.git" ]]; then
+if [[ ! -e "$DEPLOY_DIR/.git" ]]; then
   echo "Creating deploy worktree..."
   git worktree add "$DEPLOY_DIR" "$DEPLOY_BRANCH"
 else
