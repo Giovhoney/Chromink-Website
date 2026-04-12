@@ -16,7 +16,7 @@ const Contact = () => {
             muted 
             loop 
             playsInline 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-80"
           >
             <source src="/images/whatsapp/vid.mp4" type="video/mp4" />
             {/* Fallback image if video fails to load */}
