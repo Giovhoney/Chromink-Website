@@ -45,7 +45,7 @@ const BusinessSignage = () => {
       title: "Shop Signboards", 
       icon: <Store className="text-brand-cyan" />, 
       /* IMAGE: Shop Signboard Sample - Authentic Ghanaian Context */
-      image: "/images/whatsapp/15.jpeg",
+      image: "https://printplanetghana.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-11-at-7.40.11-PM-1-edited.jpeg",
       desc: "Custom-made signboards for your shop front, including 3D letters, lightboxes, and metal frames." 
     },
     { 
@@ -117,7 +117,7 @@ const BusinessSignage = () => {
           className="absolute inset-0 z-0"
         >
           <img 
-            src="/images/whatsapp/3.jpeg" 
+            src="https://i.pinimg.com/736x/f9/44/8e/f9448ebce9b13d028142d0d55c483e7c.jpg" 
             alt="Business Signage and Shop Branding in Kumasi" 
             className="w-full h-full object-cover"
           />
@@ -221,7 +221,7 @@ const BusinessSignage = () => {
           {/* IMAGE: Business Signage Sample / Why Choose Us Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
             <img 
-              src="/images/signage-sample.png" 
+              src="https://i.pinimg.com/1200x/d0/bd/f3/d0bdf36c9ad4271c40c7b0194caf514c.jpg" 
               alt="Professional 3D Illuminated Business Signage in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
             />

@@ -62,7 +62,7 @@ const Services = () => {
       title: "Business Signage", 
       icon: <Printer className="text-brand-yellow" size={32} />,
       /* IMAGE: Business Signage Service Card - Authentic Ghanaian Context */
-      image: "https://i.pinimg.com/1200x/89/bd/13/89bd13e3867275c9e031187250b60ad2.jpg",
+      image: "https://printplanetghana.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-11-at-7.40.11-PM-1-edited.jpeg",
       alt: "Professional 3D illuminated shop signage and branding in Kumasi",
       desc: "Professional shop front signs, 3D letters, and interior branding to make your business stand out.", 
       link: "/services/business-signage" 
