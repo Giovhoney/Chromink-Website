@@ -71,7 +71,7 @@ const CustomPrinting = () => {
       title: "One-off Requests", 
       icon: <Palette className="text-brand-magenta" />, 
       /* IMAGE: One-off Custom Print Sample */
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&w=800&q=80",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt04c_C1Q1ln6vGGIrSn5QwCZxbwv6Jg-bFne5Qlt_RDWzQbdKj03dUwU&s=10",
       desc: "Have a unique idea? We handle specialized, non-standard print jobs with creative precision." 
     },
     { 

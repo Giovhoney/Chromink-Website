@@ -45,42 +45,42 @@ const LargeFormatPrinting = () => {
       title: "Large Banners", 
       icon: <Maximize className="text-brand-cyan" />, 
       /* IMAGE: Large Banner Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/1200x/78/5f/62/785f62d6421ec68659ccfdd553466aae.jpg",
       desc: "Massive vinyl and mesh banners for high-visibility outdoor advertising and shop fronts." 
     },
     { 
       title: "Backdrops", 
       icon: <Layout className="text-brand-magenta" />, 
       /* IMAGE: Backdrop Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/1200x/fd/ca/3b/fdca3b49dbb88cfd3d6a6ed544b90c5a.jpg",
       desc: "Professional stage and photo backdrops for events, conferences, and media launches." 
     },
     { 
       title: "Exhibition Displays", 
       icon: <Layers className="text-brand-yellow" />, 
       /* IMAGE: Exhibition Display Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/1200x/ca/06/81/ca0681a35f647f37c2373257b6074bb8.jpg",
       desc: "Custom-printed displays for trade shows, exhibitions, and corporate presentations." 
     },
     { 
       title: "Window Graphics", 
       icon: <PenTool className="text-brand-cyan" />, 
       /* IMAGE: Window Graphics Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1605648916319-cf082f7524a1?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/36/b9/8f/36b98f1d845360691955c1da42d24295.jpg",
       desc: "Large-scale vinyl graphics and one-way vision films for storefront windows." 
     },
     { 
       title: "Promotional Displays", 
       icon: <Megaphone className="text-brand-magenta" />, 
       /* IMAGE: Promotional Display Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/1200x/2b/81/bc/2b81bc4b8efd834629d3a1faea09a147.jpg",
       desc: "Eye-catching large-format displays for retail promotions and grand openings." 
     },
     { 
       title: "Wide Format Prints", 
       icon: <Monitor className="text-brand-yellow" />, 
       /* IMAGE: Wide Format Print Sample - Authentic Ghanaian Context */
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80",
+      image: "https://i.pinimg.com/736x/43/fa/e1/43fae1bb49390039956c47b293dc4e51.jpg",
       desc: "High-resolution wide-format printing for architectural drawings and large-scale art." 
     }
   ];

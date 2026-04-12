@@ -59,7 +59,7 @@ const FlyerPrinting = () => {
       title: "Handbills", 
       icon: <FileText className="text-brand-yellow" />, 
       /* IMAGE: Handbill Sample - Authentic Ghanaian Context */
-      image: "/images/whatsapp/fune.jpeg",
+      image: "https://i.pinimg.com/1200x/24/8a/70/248a7086c5e897865efc9bfecea2aadb.jpg",
       desc: "Small, cost-effective handouts for street marketing and event announcements." 
     },
     { 

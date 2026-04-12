@@ -83,7 +83,7 @@ const TShirtPrinting = () => {
       title: "Church Shirts", 
       icon: <Church className="text-brand-yellow" />, 
       /* IMAGE: Church Shirts Sample */
-      image: "/images/whatsapp/16.jpeg",
+      image: "https://i.pinimg.com/736x/cf/1f/fb/cf1ffbe6a98aa1d88b6c545677dbf504.jpg",
       desc: "Branded apparel for church programs, conventions, and youth groups." 
     },
     { 
@@ -118,7 +118,7 @@ const TShirtPrinting = () => {
         {/* HERO BACKGROUND IMAGE: High-Quality T-Shirt Printing Process */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/whatsapp/16.jpeg" 
+            src="https://i.pinimg.com/1200x/da/f0/24/daf0246a43f00f50ce98afbe7f9869ae.jpg" 
             alt="Custom T-Shirt Printing Services in Kumasi" 
             className="w-full h-full object-cover"
           />

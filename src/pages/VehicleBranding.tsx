@@ -43,42 +43,42 @@ const VehicleBranding = () => {
       title: "Car Branding", 
       icon: <Car className="text-brand-cyan" />, 
       /* IMAGE: Car Branding Sample */
-      image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80",
+      image: "https://static.wixstatic.com/media/58925e_f368ac40f43048bfbecaf4a09c927cb1~mv2.jpg/v1/fill/w_264,h_470,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/58925e_f368ac40f43048bfbecaf4a09c927cb1~mv2.jpg",
       desc: "Professional branding for individual cars, including logos, contact info, and partial wraps." 
     },
     { 
       title: "Van Branding", 
       icon: <Truck className="text-brand-magenta" />, 
       /* IMAGE: Van Branding Sample */
-      image: "https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?auto=format&fit=crop&w=800&q=80",
+      image: "https://webfastprinting.co.za/wp-content/uploads/2024/07/Vehicle-Branding-7-1024x770.jpg",
       desc: "High-visibility branding for delivery vans and service vehicles to maximize your reach." 
     },
     { 
       title: "Fleet Branding", 
       icon: <Layout className="text-brand-yellow" />, 
       /* IMAGE: Fleet Branding Sample */
-      image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e01a?auto=format&fit=crop&w=800&q=80",
+      image: "https://pictures-ghana.jijistatic.net/41967440_NjIwLTgyNy01YmRiZDNkNmIx.webp",
       desc: "Consistent branding solutions for multiple vehicles to build a strong corporate identity." 
     },
     { 
       title: "Vehicle Stickers", 
       icon: <StickyNote className="text-brand-cyan" />, 
       /* IMAGE: Vehicle Stickers Sample */
-      image: "https://images.unsplash.com/photo-1605648916319-cf082f7524a1?auto=format&fit=crop&w=800&q=80",
+      image: "https://profinghana.com/wp-content/uploads/2016/07/taxi2.jpg",
       desc: "Custom vinyl stickers and decals for doors, windows, and bumpers." 
     },
     { 
       title: "Partial Wraps", 
       icon: <ShieldCheck className="text-brand-magenta" />, 
       /* IMAGE: Partial Vehicle Wrap Sample */
-      image: "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=800&q=80",
+      image: "https://six08graphics.com/cdn/shop/files/252903176_885410185437701_6201733077237222110_n.jpg?v=1684157361",
       desc: "Eye-catching partial vehicle wraps that combine branding with the vehicle's original color." 
     },
     { 
       title: "Logo Application", 
       icon: <Zap className="text-brand-yellow" />, 
       /* IMAGE: Vehicle Logo Application Sample */
-      image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80",
+      image: "https://www.rochester.edu/newscenter/wp-content/uploads/2021/12/university-fleet-vehicles.jpg",
       desc: "Clean and professional application of your business logo for a subtle yet effective look." 
     }
   ];
@@ -92,7 +92,7 @@ const VehicleBranding = () => {
         {/* HERO BACKGROUND IMAGE: Professional Vehicle Branding in Kumasi */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?auto=format&fit=crop&w=1920&q=80" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt04c_C1Q1ln6vGGIrSn5QwCZxbwv6Jg-bFne5Qlt_RDWzQbdKj03dUwU&s=10" 
             alt="Vehicle Branding Services in Kumasi" 
             className="w-full h-full object-cover"
           />
@@ -180,7 +180,7 @@ const VehicleBranding = () => {
           {/* IMAGE: Vehicle Branding Sample / Why Choose Us Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
             <img 
-              src="https://images.unsplash.com/photo-1603380353725-f8a4d39cc41e?auto=format&fit=crop&w=800&q=80" 
+              src="https://www.rochester.edu/newscenter/wp-content/uploads/2021/12/university-fleet-vehicles.jpg" 
               alt="Professional Vehicle Branding and Car Wraps in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
             />
