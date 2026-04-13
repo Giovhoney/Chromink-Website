@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/artboard-10.png" alt="ChromInk Logo" className="h-8 md:h-12 w-auto" />
+            <OptimizedImage src="/artboard-10.png" alt="ChromInk Logo" className="h-8 md:h-12 w-auto" priority />
           </Link>
 
           {/* Desktop Nav */}
@@ -86,7 +87,7 @@ export const Footer = () => (
       {/* Brand Column */}
       <div className="space-y-6">
         <Link to="/" className="flex items-center gap-2">
-          <img src="/footerlogo.png" alt="ChromInk Logo" className="h-10 w-auto" />
+          <OptimizedImage src="/footerlogo.png" alt="ChromInk Logo" className="h-10 w-auto" />
         </Link>
         <p className="text-gray-400 leading-relaxed max-w-xs">
           Premium printing and branding services in Kumasi, Ghana. We turn your vision into high-quality physical reality.

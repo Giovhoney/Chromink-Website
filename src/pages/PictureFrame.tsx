@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
 import ImageLightbox from '../components/ImageLightbox';
+import OptimizedImage from '../components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
@@ -184,7 +185,7 @@ const PictureFrame = () => {
               <motion.div key={i} variants={itemVariants} className="bg-white group overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500">
                 <ImageLightbox src={type.image} alt={type.title} label={`Open ${type.title} image preview`}>
                 <div className="aspect-[4/3] overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={type.image} 
                     alt={type.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -210,7 +211,7 @@ const PictureFrame = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <Reveal>
               <div className="relative">
-                <img 
+                <OptimizedImage 
                   src="/images/whatsapp/team.jpeg" 
                   alt="Quality Framing" 
                   className="w-full aspect-square object-cover shadow-2xl"

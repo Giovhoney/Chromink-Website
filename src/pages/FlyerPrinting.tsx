@@ -4,6 +4,7 @@ import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, CheckCircle2, MessageCircle, FileStack, FileText, Layout, Megaphone, Users, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 const FlyerPrinting = () => {
@@ -116,10 +117,11 @@ const FlyerPrinting = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="https://i.pinimg.com/1200x/a7/a6/e6/a7a6e61acc5d9cc11ea6cdd181a7dc30.jpg" 
             alt="Flyer and Brochure Printing Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
@@ -182,7 +184,7 @@ const FlyerPrinting = () => {
               <motion.div key={i} variants={itemVariants} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={product.image} alt={product.title} label={`Open ${product.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={product.image} 
                     alt={product.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

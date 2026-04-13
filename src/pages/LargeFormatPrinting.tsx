@@ -4,6 +4,7 @@ import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, CheckCircle2, MessageCircle, Monitor, Maximize, Layout, PenTool, Megaphone, Layers, ChevronDown, ChevronUp } from 'lucide-react';
 
 const LargeFormatPrinting = () => {
@@ -116,10 +117,11 @@ const LargeFormatPrinting = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1920&q=80" 
             alt="Large Format Printing Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
@@ -182,7 +184,7 @@ const LargeFormatPrinting = () => {
               <motion.div key={i} variants={itemVariants} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={service.image} alt={service.title} label={`Open ${service.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -237,7 +239,7 @@ const LargeFormatPrinting = () => {
           <Reveal delay={0.6} y={0}>
             {/* IMAGE: Large Format Printing Sample / Why Choose Us Section - Authentic Ghanaian Context */}
             <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-              <img 
+              <OptimizedImage 
                 src="/images/large-format-sample.png" 
                 alt="Massive Wide Format Billboard Printing in Kumasi Ghana" 
                 className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

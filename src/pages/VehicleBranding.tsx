@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
 import ImageLightbox from '../components/ImageLightbox';
+import OptimizedImage from '../components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageCircle, Truck, Car, Layout, StickyNote, ShieldCheck, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -91,10 +92,11 @@ const VehicleBranding = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Professional Vehicle Branding in Kumasi */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <OptimizedImage 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt04c_C1Q1ln6vGGIrSn5QwCZxbwv6Jg-bFne5Qlt_RDWzQbdKj03dUwU&s=10" 
             alt="Vehicle Branding Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
@@ -129,7 +131,7 @@ const VehicleBranding = () => {
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={service.image} alt={service.title} label={`Open ${service.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -179,7 +181,7 @@ const VehicleBranding = () => {
           </div>
           {/* IMAGE: Vehicle Branding Sample / Why Choose Us Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-            <img 
+            <OptimizedImage 
               src="https://www.rochester.edu/newscenter/wp-content/uploads/2021/12/university-fleet-vehicles.jpg" 
               alt="Professional Vehicle Branding and Car Wraps in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

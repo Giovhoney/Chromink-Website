@@ -4,6 +4,7 @@ import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, CheckCircle2, MessageCircle, Printer, Store, Layout, PenTool, Map, Megaphone, ChevronDown, ChevronUp } from 'lucide-react';
 
 const BusinessSignage = () => {
@@ -116,10 +117,11 @@ const BusinessSignage = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="https://i.pinimg.com/736x/f9/44/8e/f9448ebce9b13d028142d0d55c483e7c.jpg" 
             alt="Business Signage and Shop Branding in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
@@ -170,7 +172,7 @@ const BusinessSignage = () => {
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={service.image} alt={service.title} label={`Open ${service.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -220,7 +222,7 @@ const BusinessSignage = () => {
           </div>
           {/* IMAGE: Business Signage Sample / Why Choose Us Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-            <img 
+            <OptimizedImage 
               src="https://i.pinimg.com/1200x/d0/bd/f3/d0bdf36c9ad4271c40c7b0194caf514c.jpg" 
               alt="Professional 3D Illuminated Business Signage in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

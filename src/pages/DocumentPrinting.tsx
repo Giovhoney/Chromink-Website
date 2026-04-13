@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
 import ImageLightbox from '../components/ImageLightbox';
+import OptimizedImage from '../components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageCircle, FileText, Printer, Copy, BookOpen, Briefcase, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -91,10 +92,11 @@ const DocumentPrinting = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Professional Document Printing and Office Support */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <OptimizedImage 
             src="https://i.pinimg.com/1200x/fa/f4/41/faf4417ab4fba29077eb1a751d1c9744.jpg" 
             alt="Document Printing Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
@@ -129,7 +131,7 @@ const DocumentPrinting = () => {
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={service.image} alt={service.title} label={`Open ${service.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={service.image} 
                     alt={service.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -179,7 +181,7 @@ const DocumentPrinting = () => {
           </div>
           {/* IMAGE: Document Printing Sample / Why Choose Us Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-            <img 
+            <OptimizedImage 
               src="https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&w=800&q=80" 
               alt="Professional Document Printing and Binding Services in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 type ImageLightboxProps = {
   src: string;
@@ -60,10 +61,11 @@ const ImageLightbox = ({ src, alt, label, children }: ImageLightboxProps) => {
           </button>
 
           <div className="flex h-full items-center justify-center">
-            <img
+            <OptimizedImage
               src={src}
               alt={alt}
               className="max-h-[88vh] max-w-full object-contain shadow-2xl"
+              priority
               onClick={(event) => event.stopPropagation()}
             />
           </div>

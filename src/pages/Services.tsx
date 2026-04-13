@@ -3,6 +3,7 @@ import { Header, Footer } from '../components/Layout';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, LayoutGrid, Shirt, Printer, Truck, FileText, Palette, Layers, StickyNote, FileStack, Monitor, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Services = () => {
@@ -172,10 +173,11 @@ const Services = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1920&q=80" 
             alt="ChromInk Printing and Branding Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
@@ -222,7 +224,7 @@ const Services = () => {
               <motion.div key={i} variants={itemVariants}>
                 <Link to={service.link} className="card-hover bg-white flex flex-col group overflow-hidden h-full">
                   <div className="aspect-video overflow-hidden relative">
-                    <img 
+                    <OptimizedImage 
                       src={service.image} 
                       alt={service.alt} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

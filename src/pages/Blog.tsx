@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Footer } from '../components/Layout';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, Calendar, User, Clock, Tag } from 'lucide-react';
 
 const Blog = () => {
@@ -60,10 +61,11 @@ const Blog = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Creative Workspace / Design Tools */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <OptimizedImage 
             src="/social-preview.png" 
             alt="ChromInk Printing and Branding Tips Blog" 
             className="w-full h-full object-cover"
+            priority
           />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
@@ -94,7 +96,7 @@ const Blog = () => {
             {blogPosts.map((post, i) => (
               <Link key={i} to={post.link} className="group flex flex-col">
                 <div className="aspect-video bg-gray-50 border border-gray-100 mb-8 overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={post.image} 
                     alt={post.alt} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

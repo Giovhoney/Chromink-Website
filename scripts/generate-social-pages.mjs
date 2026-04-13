@@ -4,6 +4,7 @@ import path from 'node:path';
 const SITE_URL = 'https://chromink.co';
 const distDir = path.resolve('dist');
 const templatePath = path.join(distDir, 'index.html');
+const buildDate = new Date().toISOString();
 
 const routeMetadata = {
   '/': {
@@ -289,6 +290,24 @@ const routeMetadata = {
 
 const getCanonicalUrl = (route) => (route === '/' ? `${SITE_URL}/` : `${SITE_URL}${route}`);
 
+const getChangeFrequency = (route, meta) => {
+  if (route === '/') return 'weekly';
+  if (meta.type === 'article') return 'monthly';
+  if (route === '/blog') return 'weekly';
+  if (route.startsWith('/services')) return 'monthly';
+  return 'monthly';
+};
+
+const getPriority = (route, meta) => {
+  if (route === '/') return '1.0';
+  if (route === '/services') return '0.9';
+  if (route === '/contact') return '0.8';
+  if (route === '/blog') return '0.8';
+  if (meta.type === 'service') return '0.85';
+  if (meta.type === 'article') return '0.75';
+  return '0.7';
+};
+
 const createLocalBusinessSchema = (meta) => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
@@ -517,5 +536,32 @@ for (const [route, meta] of Object.entries(routeMetadata)) {
   fs.mkdirSync(routeDir, { recursive: true });
   fs.writeFileSync(path.join(routeDir, 'index.html'), routeHtml);
 }
+
+const sitemapEntries = Object.entries(routeMetadata)
+  .map(([route, meta]) => {
+    const url = getCanonicalUrl(route);
+    return `  <url>
+    <loc>${url}</loc>
+    <lastmod>${buildDate}</lastmod>
+    <changefreq>${getChangeFrequency(route, meta)}</changefreq>
+    <priority>${getPriority(route, meta)}</priority>
+  </url>`;
+  })
+  .join('\n');
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries}
+</urlset>
+`;
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+
+fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml);
+fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt);
 
 console.log(`Generated SEO pages for ${Object.keys(routeMetadata).length} routes.`);

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Header, Footer } from '../components/Layout';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { CheckCircle2, ArrowRight, Printer, Shirt, LayoutGrid, Truck, FileText, Palette } from 'lucide-react';
 
 const Home = () => {
@@ -103,10 +104,11 @@ const Home = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="/images/about-story.png" 
             alt="Professional Large Format Printer in Kumasi Studio" 
             className="w-full h-full object-cover"
+            priority
           />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/70 backdrop-blur-[2px]"></div>
@@ -214,7 +216,7 @@ const Home = () => {
               <motion.div key={i} variants={itemVariants}>
                 <Link to={service.link} className="card-hover bg-white flex flex-col group overflow-hidden h-full">
                   <div className="aspect-video overflow-hidden relative">
-                    <img 
+                    <OptimizedImage 
                       src={service.image} 
                       alt={service.alt} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -272,7 +274,7 @@ const Home = () => {
             <div className="relative">
               {/* IMAGE: Quality Print Inspection / Why Choose Us Section - Authentic Ghanaian Context */}
               <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-                <img 
+                <OptimizedImage 
                   src="https://i.pinimg.com/1200x/14/6d/7d/146d7d182747cd23186f73c9c02ed4b9.jpg" 
                   alt="Quality Print Inspection at ChromInk Kumasi" 
                   className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
 import ImageLightbox from '../components/ImageLightbox';
+import OptimizedImage from '../components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageCircle, Palette, Gift, Package, Briefcase, Sparkles, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -91,10 +92,11 @@ const CustomPrinting = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Creative Custom Printing Solutions */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <OptimizedImage 
             src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1920&q=80" 
             alt="Custom Printing and Special Orders in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
@@ -129,7 +131,7 @@ const CustomPrinting = () => {
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={example.image} alt={example.title} label={`Open ${example.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={example.image} 
                     alt={example.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -179,7 +181,7 @@ const CustomPrinting = () => {
           </div>
           {/* IMAGE: Custom Printing Sample / Why Choose Us Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-            <img 
+            <OptimizedImage 
               src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" 
               alt="Custom Printing and Special Branding Orders in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

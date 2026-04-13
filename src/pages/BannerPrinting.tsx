@@ -4,6 +4,7 @@ import ImageLightbox from '../components/ImageLightbox';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, CheckCircle2, MessageCircle, LayoutGrid, Maximize, Calendar, Church, Megaphone, Monitor, Image, ChevronDown, ChevronUp } from 'lucide-react';
 
 const BannerPrinting = () => {
@@ -124,10 +125,11 @@ const BannerPrinting = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="https://i.pinimg.com/1200x/2c/c1/fc/2cc1fc19911d361b0468bc27e98d2794.jpg" 
             alt="Banner Printing Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
@@ -190,7 +192,7 @@ const BannerPrinting = () => {
               <motion.div key={i} variants={itemVariants} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={type.image} alt={type.title} label={`Open ${type.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={type.image} 
                     alt={type.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -219,7 +221,7 @@ const BannerPrinting = () => {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           {/* IMAGE: Banner Printing Sample / Why Choose Us Section */}
           <div className="aspect-video bg-gray-900 border border-gray-800 relative overflow-hidden group">
-            <img 
+            <OptimizedImage 
               src="/images/about-story.png" 
               alt="High Quality Vinyl Banner Printing in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"

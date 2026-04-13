@@ -3,6 +3,7 @@ import { Header, Footer } from '../components/Layout';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import OptimizedImage from '../components/OptimizedImage';
 import { ArrowRight, Target, Users, ShieldCheck, Zap, HeartHandshake } from 'lucide-react';
 
 const About = () => {
@@ -37,10 +38,11 @@ const About = () => {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <img 
+          <OptimizedImage 
             src="https://i.pinimg.com/736x/c7/9d/75/c79d75c78f834a46b38dddfb2a31b2a5.jpg" 
             alt="ChromInk Modern Printing Studio in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
@@ -102,7 +104,7 @@ const About = () => {
             <div className="order-1 lg:order-2 relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-brand-cyan to-brand-magenta opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500"></div>
               <div className="aspect-square bg-gray-50 border border-gray-100 relative overflow-hidden shadow-2xl">
-                <img 
+                <OptimizedImage 
                   src="/images/about-story.png" 
                   alt="ChromInk Founders and Team in Kumasi - Authentic Ghanaian Context" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -138,7 +140,7 @@ const About = () => {
             ].map((item, i) => (
               <motion.div key={i} variants={itemVariants} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <div className="aspect-video overflow-hidden relative">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <OptimizedImage src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-brand-black/40 transition-colors duration-500"></div>
                 </div>
                 <div className="p-10 flex flex-col flex-grow">

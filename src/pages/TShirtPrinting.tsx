@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header, Footer } from '../components/Layout';
 import ImageLightbox from '../components/ImageLightbox';
+import OptimizedImage from '../components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, MessageCircle, Shirt, Users, Church, School, ShoppingBag, Zap, Palette, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -117,10 +118,11 @@ const TShirtPrinting = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: High-Quality T-Shirt Printing Process */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <OptimizedImage 
             src="https://i.pinimg.com/1200x/da/f0/24/daf0246a43f00f50ce98afbe7f9869ae.jpg" 
             alt="Custom T-Shirt Printing Services in Kumasi" 
             className="w-full h-full object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
@@ -155,7 +157,7 @@ const TShirtPrinting = () => {
               <div key={i} className="bg-white flex flex-col border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden">
                 <ImageLightbox src={order.image} alt={order.title} label={`Open ${order.title} image preview`}>
                 <div className="aspect-video overflow-hidden relative">
-                  <img 
+                  <OptimizedImage 
                     src={order.image} 
                     alt={order.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -207,7 +209,7 @@ const TShirtPrinting = () => {
           </div>
           {/* IMAGE: T-Shirt Printing Sample / DTF Technology Section */}
           <div className="aspect-square bg-gray-900 border border-gray-800 relative overflow-hidden group">
-            <img 
+            <OptimizedImage 
               src="/images/tshirt-sample.png" 
               alt="High Quality Branded T-Shirts in Kumasi Ghana" 
               className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
