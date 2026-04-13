@@ -1,11 +1,30 @@
-import fs from 'node:fs';
-import path from 'node:path';
+export const SITE_URL = 'https://chromink.co';
 
-const SITE_URL = 'https://chromink.co';
-const distDir = path.resolve('dist');
-const templatePath = path.join(distDir, 'index.html');
+type Breadcrumb = {
+  name: string;
+  path: string;
+};
 
-const routeMetadata = {
+export type PageType = 'website' | 'service' | 'blog' | 'article';
+
+export type RouteMetadata = {
+  title: string;
+  description: string;
+  keywords: string;
+  image: string;
+  imageAlt: string;
+  type: PageType;
+  breadcrumbs: Breadcrumb[];
+  serviceName?: string;
+  article?: {
+    publishedTime: string;
+    modifiedTime: string;
+    section: string;
+    tags: string[];
+  };
+};
+
+export const routeMetadata: Record<string, RouteMetadata> = {
   '/': {
     title: 'ChromInk | Professional Printing & Branding Services in Kumasi',
     description:
@@ -287,235 +306,8 @@ const routeMetadata = {
   },
 };
 
-const getCanonicalUrl = (route) => (route === '/' ? `${SITE_URL}/` : `${SITE_URL}${route}`);
+export const getCanonicalUrl = (path: string) =>
+  path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
 
-const createLocalBusinessSchema = (meta) => ({
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'ChromInk',
-  image: meta.image,
-  '@id': SITE_URL,
-  url: SITE_URL,
-  telephone: '+233593321151',
-  email: 'print@chromink.co',
-  priceRange: '$$',
-  description:
-    'ChromInk provides professional printing and branding services in Kumasi, Ghana.',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Asokore-Mampong, Parkoso-Baubai Junction',
-    addressLocality: 'Kumasi',
-    addressRegion: 'Ashanti',
-    addressCountry: 'GH',
-  },
-  areaServed: {
-    '@type': 'City',
-    name: 'Kumasi',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 6.71322,
-    longitude: -1.55873,
-  },
-  sameAs: [
-    'https://instagram.com/chromink.co',
-    'https://facebook.com/chromink.co',
-    'https://tiktok.com/@chromink.co',
-  ],
-});
-
-const createBreadcrumbSchema = (meta) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: meta.breadcrumbs.map((crumb, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    name: crumb.name,
-    item: getCanonicalUrl(crumb.path),
-  })),
-});
-
-const createPrimarySchema = (route, meta) => {
-  const canonicalUrl = getCanonicalUrl(route);
-
-  if (meta.type === 'service') {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: meta.serviceName,
-      description: meta.description,
-      image: meta.image,
-      serviceType: meta.serviceName,
-      url: canonicalUrl,
-      areaServed: {
-        '@type': 'City',
-        name: 'Kumasi',
-      },
-      provider: {
-        '@type': 'LocalBusiness',
-        name: 'ChromInk',
-        url: SITE_URL,
-      },
-    };
-  }
-
-  if (meta.type === 'article' && meta.article) {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: meta.title,
-      description: meta.description,
-      image: [meta.image],
-      author: {
-        '@type': 'Organization',
-        name: 'ChromInk',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'ChromInk',
-        logo: {
-          '@type': 'ImageObject',
-          url: `${SITE_URL}/logo.png`,
-        },
-      },
-      mainEntityOfPage: canonicalUrl,
-      datePublished: meta.article.publishedTime,
-      dateModified: meta.article.modifiedTime,
-      articleSection: meta.article.section,
-      keywords: meta.article.tags.join(', '),
-    };
-  }
-
-  if (meta.type === 'blog') {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'Blog',
-      name: 'ChromInk Blog',
-      description: meta.description,
-      url: canonicalUrl,
-      publisher: {
-        '@type': 'Organization',
-        name: 'ChromInk',
-      },
-    };
-  }
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': route === '/' ? 'WebSite' : 'WebPage',
-    name: meta.title,
-    description: meta.description,
-    url: canonicalUrl,
-    image: meta.image,
-  };
-};
-
-if (!fs.existsSync(templatePath)) {
-  throw new Error(`Missing built template: ${templatePath}`);
-}
-
-const template = fs.readFileSync(templatePath, 'utf8');
-
-const replaceOrInsertCanonical = (html, canonicalUrl) => {
-  if (html.includes('rel="canonical"')) {
-    return html.replace(
-      /<link rel="canonical" href=".*?">/,
-      `<link rel="canonical" href="${canonicalUrl}">`
-    );
-  }
-
-  return html.replace(
-    '</head>',
-    `    <link rel="canonical" href="${canonicalUrl}">\n  </head>`
-  );
-};
-
-for (const [route, meta] of Object.entries(routeMetadata)) {
-  const routeUrl = getCanonicalUrl(route);
-  const ogType = meta.type === 'article' ? 'article' : 'website';
-  const structuredData = [
-    createLocalBusinessSchema(meta),
-    createBreadcrumbSchema(meta),
-    createPrimarySchema(route, meta),
-  ];
-
-  let routeHtml = template
-    .replace(/<title>.*?<\/title>/, `<title>${meta.title}</title>`)
-    .replace(
-      /<meta name="description" content=".*?" \/>/,
-      `<meta name="description" content="${meta.description}" />`
-    )
-    .replace(
-      /<meta property="og:type" content=".*?" \/>/,
-      `<meta property="og:type" content="${ogType}" />`
-    )
-    .replace(
-      /<meta property="og:url" content=".*?" \/>/,
-      `<meta property="og:url" content="${routeUrl}" />`
-    )
-    .replace(
-      /<meta property="og:title" content=".*?" \/>/,
-      `<meta property="og:title" content="${meta.title}" />`
-    )
-    .replace(
-      /<meta property="og:description" content=".*?" \/>/,
-      `<meta property="og:description" content="${meta.description}" />`
-    )
-    .replace(
-      /<meta property="og:image" content=".*?" \/>/,
-      `<meta property="og:image" content="${meta.image}" />`
-    )
-    .replace(
-      /<meta property="og:image:secure_url" content=".*?" \/>/,
-      `<meta property="og:image:secure_url" content="${meta.image}" />`
-    )
-    .replace(
-      /<meta property="og:image:alt" content=".*?" \/>/,
-      `<meta property="og:image:alt" content="${meta.imageAlt}" />`
-    )
-    .replace(
-      /<meta property="twitter:url" content=".*?" \/>/,
-      `<meta property="twitter:url" content="${routeUrl}" />`
-    )
-    .replace(
-      /<meta property="twitter:title" content=".*?" \/>/,
-      `<meta property="twitter:title" content="${meta.title}" />`
-    )
-    .replace(
-      /<meta property="twitter:description" content=".*?" \/>/,
-      `<meta property="twitter:description" content="${meta.description}" />`
-    )
-    .replace(
-      /<meta property="twitter:image" content=".*?" \/>/,
-      `<meta property="twitter:image" content="${meta.image}" />`
-    )
-    .replace(
-      /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
-      `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`
-    );
-
-  routeHtml = replaceOrInsertCanonical(routeHtml, routeUrl);
-
-  if (routeHtml.includes('meta name="keywords"')) {
-    routeHtml = routeHtml.replace(
-      /<meta name="keywords" content=".*?" \/>/,
-      `<meta name="keywords" content="${meta.keywords}" />`
-    );
-  } else {
-    routeHtml = routeHtml.replace(
-      '<meta name="description"',
-      `<meta name="keywords" content="${meta.keywords}" />\n    <meta name="description"`
-    );
-  }
-
-  if (route === '/') {
-    fs.writeFileSync(templatePath, routeHtml);
-    continue;
-  }
-
-  const routeDir = path.join(distDir, route.replace(/^\//, ''));
-  fs.mkdirSync(routeDir, { recursive: true });
-  fs.writeFileSync(path.join(routeDir, 'index.html'), routeHtml);
-}
-
-console.log(`Generated SEO pages for ${Object.keys(routeMetadata).length} routes.`);
+export const getRouteMetadata = (path: string) =>
+  routeMetadata[path] ?? routeMetadata['/'];

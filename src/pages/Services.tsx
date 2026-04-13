@@ -249,6 +249,57 @@ const Services = () => {
         </div>
       </section>
 
+      <section className="section-padding bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter uppercase">
+              Helpful <span className="text-brand-cyan">Printing Guides</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Explore practical resources that answer common pricing and planning questions before you order your next banner, signboard, or branded print run in Kumasi.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Link
+              to="/blog/banner-printing-cost-kumasi"
+              className="bg-white border border-gray-100 p-8 group hover:border-brand-cyan transition-all"
+            >
+              <p className="text-xs font-black uppercase tracking-widest text-brand-cyan mb-4">
+                Pricing Guide
+              </p>
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 group-hover:text-brand-cyan transition-colors">
+                How Much Does Banner Printing Cost in Kumasi?
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Learn what affects banner prices, from size and material to finishing and design support.
+              </p>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                Read Guide <ArrowRight size={14} className="text-brand-cyan" />
+              </div>
+            </Link>
+
+            <Link
+              to="/blog"
+              className="bg-white border border-gray-100 p-8 group hover:border-brand-magenta transition-all"
+            >
+              <p className="text-xs font-black uppercase tracking-widest text-brand-magenta mb-4">
+                Blog
+              </p>
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 group-hover:text-brand-magenta transition-colors">
+                Browse More Printing and Branding Tips
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Find more advice on signage, apparel branding, sticker printing, file preparation, and campaign planning for your business.
+              </p>
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                Visit Blog <ArrowRight size={14} className="text-brand-magenta" />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Why Businesses Choose Our Services */}
       <section className="section-padding bg-brand-black text-white">
         <div className="max-w-7xl mx-auto">

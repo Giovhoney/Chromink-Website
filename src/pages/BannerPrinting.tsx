@@ -252,6 +252,46 @@ const BannerPrinting = () => {
         </div>
       </section>
 
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+          <Link
+            to="/blog/banner-printing-cost-kumasi"
+            className="border border-gray-100 p-8 group hover:border-brand-cyan transition-all"
+          >
+            <p className="text-xs font-black uppercase tracking-widest text-brand-cyan mb-4">
+              Related Guide
+            </p>
+            <h2 className="text-3xl font-black uppercase tracking-tight mb-4 group-hover:text-brand-cyan transition-colors">
+              Need Banner Pricing Before You Order?
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Read our detailed Kumasi banner pricing guide to compare materials, sizes, and common cost factors before requesting a quote.
+            </p>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+              Read Pricing Guide <ArrowRight size={14} />
+            </div>
+          </Link>
+
+          <Link
+            to="/services/large-format-printing"
+            className="border border-gray-100 p-8 group hover:border-brand-magenta transition-all"
+          >
+            <p className="text-xs font-black uppercase tracking-widest text-brand-magenta mb-4">
+              Related Service
+            </p>
+            <h2 className="text-3xl font-black uppercase tracking-tight mb-4 group-hover:text-brand-magenta transition-colors">
+              Need Backdrops or Oversized Displays?
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Explore our large format printing service for exhibition graphics, stage backdrops, wide displays, and other high-visibility event materials.
+            </p>
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+              View Large Format Printing <ArrowRight size={14} />
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Internal Links Section */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto text-center">

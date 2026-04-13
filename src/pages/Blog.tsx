@@ -82,6 +82,14 @@ const Blog = () => {
       {/* Blog Grid */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter uppercase">
+              Latest <span className="text-brand-cyan">Printing Guides</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Use these practical articles to compare print options, understand pricing, and choose the right branding materials for your Kumasi business or event.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {blogPosts.map((post, i) => (
               <Link key={i} to={post.link} className="group flex flex-col">
@@ -108,6 +116,43 @@ const Blog = () => {
                 </p>
                 <div className="flex items-center gap-2 font-black text-xs uppercase tracking-widest text-brand-black group-hover:gap-4 transition-all">
                   Read Article <ArrowRight size={14} className="text-brand-cyan" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter uppercase">
+              Related <span className="text-brand-magenta">Services</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Continue from our blog into the exact ChromInk service pages where you can request pricing, compare options, and place your order.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { name: 'Banner Printing', link: '/services/banner-printing' },
+              { name: 'Business Signage', link: '/services/business-signage' },
+              { name: 'T-Shirt Printing', link: '/services/t-shirt-printing' },
+            ].map((service, i) => (
+              <Link
+                key={i}
+                to={service.link}
+                className="bg-white border border-gray-100 p-8 group hover:border-brand-magenta transition-all"
+              >
+                <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 group-hover:text-brand-magenta transition-colors">
+                  {service.name}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  See service details, examples, and direct quote options for {service.name.toLowerCase()} in Kumasi.
+                </p>
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                  View Service <ArrowRight size={14} className="text-brand-magenta" />
                 </div>
               </Link>
             ))}
