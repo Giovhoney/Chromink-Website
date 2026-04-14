@@ -91,9 +91,8 @@ const routeMetadata = {
       'Explore ChromInk printing services in Kumasi, including banner printing, business signage, t-shirt printing, sticker printing, large format printing, and custom branding.',
     keywords:
       'printing services Kumasi, banner printing, business signage, t-shirt printing, vehicle branding, custom printing Ghana',
-    image:
-      'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1920&q=80',
-    imageAlt: 'ChromInk printing services in Kumasi',
+    image: `${SITE_URL}/images/bigframe.jpeg`,
+    imageAlt: 'Large format wall art and picture framing by ChromInk in Kumasi',
     type: 'website',
     breadcrumbs: [
       { name: 'Home', path: '/' },
@@ -276,8 +275,8 @@ const routeMetadata = {
       'ChromInk creates picture frames in Kumasi for portraits, gifts, office wall decor, event displays, and premium custom framing projects.',
     keywords:
       'picture frames Kumasi, custom framing Ghana, wall decor Kumasi, photo frames Ghana',
-    image: `${SITE_URL}/images/whatsapp/9.jpeg`,
-    imageAlt: 'Picture frame and wall decor services in Kumasi',
+    image: `${SITE_URL}/images/bigframe.jpeg`,
+    imageAlt: 'Large format wall art and custom picture frames in Kumasi',
     type: 'service',
     serviceName: 'Picture Frames',
     breadcrumbs: [
