@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import { businessInfo } from '../seo/businessInfo';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,9 @@ export const Header = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Careers', path: '/careers' },
     { name: 'Services', path: '/services' },
+    { name: 'Store', path: '/store' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -37,8 +40,8 @@ export const Header = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/contact" className="bg-brand-black text-white px-6 py-2.5 text-sm font-bold uppercase tracking-widest hover:bg-brand-cyan transition-all">
-              Get Quote
+            <Link to="/store" className="bg-brand-black text-white px-6 py-2.5 text-sm font-bold uppercase tracking-widest hover:bg-brand-cyan transition-all">
+              Visit Store
             </Link>
           </nav>
 
@@ -67,11 +70,11 @@ export const Header = () => {
             ))}
             <div className="pt-4">
               <Link
-                to="/contact"
+                to="/store"
                 onClick={() => setIsOpen(false)}
                 className="block w-full bg-brand-black text-white text-center py-4 font-bold uppercase tracking-widest"
               >
-                Get Quote
+                Visit Store
               </Link>
             </div>
           </div>
@@ -90,7 +93,7 @@ export const Footer = () => (
           <OptimizedImage src="/footerlogo.png" alt="ChromInk Logo" className="h-10 w-auto" />
         </Link>
         <p className="text-gray-400 leading-relaxed max-w-xs">
-          Premium printing and branding services in Kumasi, Ghana. We turn your vision into high-quality physical reality.
+          Premium printing and branding services in Kumasi, Ashanti Region. We help businesses, churches, schools, and events look professional with quality print production.
         </p>
         <div className="flex gap-4">
           <a href="https://tiktok.com/@chromink.co" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-800 flex items-center justify-center hover:bg-brand-cyan hover:border-brand-cyan transition-all">
@@ -118,6 +121,7 @@ export const Footer = () => (
           <li><Link to="/services/business-signage" className="hover:text-white transition-colors">Signage Solutions</Link></li>
           <li><Link to="/services/vehicle-branding" className="hover:text-white transition-colors">Vehicle Branding</Link></li>
           <li><Link to="/services/custom-printing" className="hover:text-white transition-colors">Custom Printing</Link></li>
+          <li><Link to="/store" className="hover:text-white transition-colors">Shop Products</Link></li>
         </ul>
       </div>
 
@@ -126,6 +130,7 @@ export const Footer = () => (
         <h5 className="font-bold text-lg mb-8 uppercase tracking-widest text-brand-magenta">Company</h5>
         <ul className="space-y-4 text-gray-400">
           <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
+          <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
           <li><Link to="/blog" className="hover:text-white transition-colors">Blog & Tips</Link></li>
           <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
           <li><Link to="/services#faq" className="hover:text-white transition-colors">FAQs</Link></li>
@@ -138,17 +143,17 @@ export const Footer = () => (
         <ul className="space-y-6 text-gray-400">
           <li className="flex gap-4">
             <MapPin className="text-brand-cyan shrink-0" size={20} />
-            <a href="https://www.google.com/maps/place/ChromInk/@6.7130822,-1.5587749,16z/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              Kumasi, Ashanti Region, Ghana
+            <a href={businessInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              {businessInfo.address.streetAddress}, {businessInfo.address.locality}
             </a>
           </li>
           <li className="flex gap-4">
             <Phone className="text-brand-magenta shrink-0" size={20} />
-            <a href="tel:+233593321151" className="hover:text-white transition-colors">+233 59 332 1151</a>
+            <a href={`tel:${businessInfo.phoneRaw}`} className="hover:text-white transition-colors">{businessInfo.phoneDisplay}</a>
           </li>
           <li className="flex gap-4">
             <Mail className="text-brand-yellow shrink-0" size={20} />
-            <a href="mailto:print@chromink.co" className="hover:text-white transition-colors">print@chromink.co</a>
+            <a href={`mailto:${businessInfo.email}`} className="hover:text-white transition-colors">{businessInfo.email}</a>
           </li>
         </ul>
       </div>
@@ -157,8 +162,8 @@ export const Footer = () => (
     <div className="max-w-7xl mx-auto pt-10 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
       <p>© 2026 ChromInk. All rights reserved.</p>
       <div className="flex gap-8">
-        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+        <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+        <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
       </div>
       <p className="flex items-center gap-2">
         Made for <span className="text-white font-bold">Kumasi</span> Businesses
@@ -167,7 +172,7 @@ export const Footer = () => (
 
     {/* Sticky WhatsApp Button */}
     <a 
-      href="https://wa.me/233593321151" 
+      href={businessInfo.whatsappUrl} 
       target="_blank" 
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center gap-2 group"

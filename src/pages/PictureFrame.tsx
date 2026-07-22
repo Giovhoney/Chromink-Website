@@ -5,6 +5,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
+import { businessInfo } from '../seo/businessInfo';
 import { ArrowRight, CheckCircle2, MessageCircle, LayoutGrid, Maximize, Image, ChevronDown, ChevronUp, Frame, WallRouter } from 'lucide-react';
 
 const PictureFrame = () => {
@@ -53,7 +54,7 @@ const PictureFrame = () => {
     { 
       title: "Large Format Wall Art", 
       icon: <Image className="text-brand-yellow" />, 
-      image: "https://i.pinimg.com/736x/f9/34/30/f93430bbd4a0d430638c493adb18cc7b.jpg",
+      image: "/images/bigframe.jpeg",
       desc: "Make a statement with oversized frames designed for living rooms and lobbies." 
     },
     { 
@@ -151,7 +152,7 @@ const PictureFrame = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="https://wa.me/233540000000" className="btn-primary flex items-center gap-2">
+              <a href={businessInfo.whatsappUrl} className="btn-primary flex items-center gap-2">
                 ORDER ON WHATSAPP <MessageCircle size={20} />
               </a>
               <Link to="/contact" className="btn-secondary border-white text-white hover:bg-white hover:text-brand-black">
@@ -163,7 +164,7 @@ const PictureFrame = () => {
       </section>
 
       {/* Frame Types Grid */}
-      <section className="section-padding bg-gray-50">
+      <section id="faq" className="section-padding bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <Reveal>
             <div className="text-center max-w-3xl mx-auto mb-20">

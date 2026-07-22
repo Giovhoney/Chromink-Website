@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Reveal } from '../components/Reveal';
 import OptimizedImage from '../components/OptimizedImage';
+import { localAreas } from '../content/localAreas';
 import { ArrowRight, LayoutGrid, Shirt, Printer, Truck, FileText, Palette, Layers, StickyNote, FileStack, Monitor, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Services = () => {
@@ -41,6 +42,14 @@ const Services = () => {
   ];
 
   const services = [
+    { 
+      title: "Present Gifts", 
+      icon: <Palette className="text-brand-magenta" size={32} />,
+      image: "/images/present2.jpg",
+      alt: "Personalized present gifts and keepsakes by ChromInk in Kumasi",
+      desc: "Create personalized gift items like custom apparel, mugs, frames, and keepsakes for birthdays, anniversaries, and special occasions.", 
+      link: "/services/present" 
+    },
     { 
       title: "Picture Frames", 
       icon: <LayoutGrid className="text-brand-cyan" size={32} />,
@@ -139,7 +148,7 @@ const Services = () => {
       alt: "Custom printing and special branding orders in Kumasi Ghana",
       desc: "Have a unique project? We offer tailored printing solutions for any specific branding need.", 
       link: "/services/custom-printing" 
-    }
+    },
   ];
 
   const containerVariants = {
@@ -168,17 +177,16 @@ const Services = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Vibrant Printing Process / CMYK Colors */}
         <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1920&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
         >
-          <OptimizedImage 
-            src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1920&q=80" 
-            alt="ChromInk Printing and Branding Services in Kumasi" 
-            className="w-full h-full object-cover"
-            priority
-          />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
@@ -302,6 +310,40 @@ const Services = () => {
         </div>
       </section>
 
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter uppercase">
+              Local Printing Pages for <span className="text-brand-magenta">Kumasi Areas</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Explore service notes tailored to some of the busiest areas we support across Kumasi, including retail zones, campus demand, and neighborhood event printing.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {localAreas.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="border border-gray-100 p-8 group hover:border-brand-magenta transition-colors"
+              >
+                <p className="text-xs font-black uppercase tracking-widest text-brand-magenta mb-4">
+                  Area Page
+                </p>
+                <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 group-hover:text-brand-magenta transition-colors">
+                  Printing in {item.area}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">{item.cardDesc}</p>
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                  View Area <ArrowRight size={14} className="text-brand-magenta" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Businesses Choose Our Services */}
       <section className="section-padding bg-brand-black text-white">
         <div className="max-w-7xl mx-auto">
@@ -408,10 +450,10 @@ const Services = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-                  WhatsApp for Quote
+                  WhatsApp Us
                 </a>
-                <Link to="/contact" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-                  Request a Call
+                <Link to="/store" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+                  Visit Store
                 </Link>
               </div>
             </>

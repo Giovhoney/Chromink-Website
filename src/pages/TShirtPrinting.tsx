@@ -117,13 +117,14 @@ const TShirtPrinting = () => {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: High-Quality T-Shirt Printing Process */}
-        <div className="absolute inset-0 z-0">
-          <OptimizedImage 
-            src="https://i.pinimg.com/1200x/da/f0/24/daf0246a43f00f50ce98afbe7f9869ae.jpg" 
-            alt="Custom T-Shirt Printing Services in Kumasi" 
-            className="w-full h-full object-cover"
-            priority
-          />
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('https://i.pinimg.com/1200x/da/f0/24/daf0246a43f00f50ce98afbe7f9869ae.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
 
@@ -283,8 +284,8 @@ const TShirtPrinting = () => {
             <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
               WhatsApp Us Now
             </a>
-            <Link to="/contact" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-              Get a Quote
+            <Link to="/store" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+              Visit Store
             </Link>
           </div>
         </div>

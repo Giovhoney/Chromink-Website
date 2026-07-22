@@ -33,17 +33,16 @@ const About = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Modern Printing Studio / Office in Kumasi - Authentic Ghanaian Context */}
         <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('https://i.pinimg.com/736x/c7/9d/75/c79d75c78f834a46b38dddfb2a31b2a5.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
         >
-          <OptimizedImage 
-            src="https://i.pinimg.com/736x/c7/9d/75/c79d75c78f834a46b38dddfb2a31b2a5.jpg" 
-            alt="ChromInk Modern Printing Studio in Kumasi" 
-            className="w-full h-full object-cover"
-            priority
-          />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
@@ -235,6 +234,52 @@ const About = () => {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
+            <h2 className="text-4xl md:text-6xl font-black mb-20 tracking-tighter uppercase text-center">
+              Meet The <span className="text-brand-cyan">Team</span>
+            </h2>
+          </Reveal>
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+            <Reveal delay={0.2} y={0}>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-brand-cyan to-brand-magenta opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div className="aspect-square bg-gray-50 border border-gray-100 relative overflow-hidden shadow-2xl">
+                  <OptimizedImage 
+                    src="/images/caleb.png" 
+                    alt="Caleb - General Manager of ChromInk" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-brand-cyan/20 to-transparent"></div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <div>
+                <div className="mb-6">
+                  <div className="text-sm font-black uppercase tracking-widest text-brand-cyan mb-2">Leadership</div>
+                  <h3 className="text-4xl md:text-5xl font-black mb-2 tracking-tighter uppercase">Caleb Anane-Appiah Nyamekye</h3>
+                  <p className="text-2xl font-bold text-gray-700 mb-8">General Manager</p>
+                </div>
+                <div className="space-y-4 text-lg leading-relaxed text-gray-600">
+                  <p>
+                    Caleb is the visionary behind ChromInk's rapid growth and success. With deep expertise in graphic designing, large format printing, and object engraving, he combines technical excellence with strategic business insight.
+                  </p>
+                  <p>
+                    His core strength lies in helping businesses and individuals grow through powerful branding solutions. Caleb excels in customer relations, management, and transforming visions into reality. He lives to serve—ensuring every client receives not just a product, but a partnership dedicated to their success.
+                  </p>
+                  <p className="font-bold text-gray-800 pt-2">
+                    "Your brand's growth is my mission."
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

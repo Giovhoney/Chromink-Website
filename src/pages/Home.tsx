@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { Header, Footer } from '../components/Layout';
 import { Reveal } from '../components/Reveal';
 import OptimizedImage from '../components/OptimizedImage';
+import TestimonialsSection from '../components/TestimonialsSection';
+import { localAreas } from '../content/localAreas';
+import { businessInfo } from '../seo/businessInfo';
 import { CheckCircle2, ArrowRight, Printer, Shirt, LayoutGrid, Truck, FileText, Palette } from 'lucide-react';
 
 const Home = () => {
@@ -99,17 +102,16 @@ const Home = () => {
       <section className="relative min-h-[80vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Professional Large Format Printer in Kumasi Studio */}
         <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('/images/about-story.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
         >
-          <OptimizedImage 
-            src="/images/about-story.png" 
-            alt="Professional Large Format Printer in Kumasi Studio" 
-            className="w-full h-full object-cover"
-            priority
-          />
           {/* Dark Overlay for Text Readability */}
           <div className="absolute inset-0 bg-brand-black/70 backdrop-blur-[2px]"></div>
         </motion.div>
@@ -299,6 +301,91 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Our Goals & Impact Section */}
+      <section className="section-padding bg-gradient-to-r from-brand-magenta to-brand-black text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <Reveal>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter uppercase leading-none">
+                Our Vision for <span className="text-brand-cyan">Growing Kumasi</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                We're not just a printing company—we're committed to helping businesses grow, individuals express their vision, and our entire community succeed.
+              </p>
+            </div>
+          </Reveal>
+
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          >
+            {[
+              {
+                number: "400+",
+                title: "Businesses Served",
+                description: "We're committed to partnering with 400+ businesses across Kumasi, from startups in tech hubs to established retailers in traditional markets.",
+                icon: "🏢"
+              },
+              {
+                number: "1000+",
+                title: "Individuals Supported",
+                description: "Whether printing personal projects, event materials, or custom gifts, we've helped 1000+ individuals bring their visions to life.",
+                icon: "👥"
+              },
+              {
+                number: "100%",
+                title: "Growth Partner",
+                description: "Our core mission: help every business customer increase their revenue through professional branding and strategic printing solutions.",
+                icon: "📈"
+              }
+            ].map((item, i) => (
+              <motion.div key={i} variants={itemVariants} className="bg-white/10 backdrop-blur-sm p-10 border border-white/20 hover:border-brand-cyan transition-all group">
+                <div className="text-6xl mb-6">{item.icon}</div>
+                <div className="text-5xl font-black text-brand-cyan mb-4 tracking-tighter">{item.number}</div>
+                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">{item.title}</h3>
+                <p className="text-gray-300 leading-relaxed group-hover:text-white transition-colors">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mt-20 pt-20 border-t border-white/20"
+          >
+            <div className="bg-brand-cyan/10 p-12 border border-brand-cyan/30 text-center">
+              <h3 className="text-3xl font-black mb-6 uppercase tracking-tight">Our Promise to You</h3>
+              <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Every design we print, every sticker we produce, every banner we create is an investment in your success. Your growth is our growth. Your brand's impact is our impact. That's why we don't settle for anything less than excellence.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center">
+                <Link to="/contact" className="bg-brand-black hover:bg-brand-magenta text-white px-12 py-6 font-black text-xl uppercase tracking-widest transition-all">
+                  Partner With Us
+                </Link>
+                <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-brand-magenta px-12 py-6 font-black text-xl uppercase tracking-widest transition-all">
+                  Chat Now
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Background Elements */}
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-cyan opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-brand-magenta opacity-5 rounded-full blur-3xl pointer-events-none"></div>
+      </section>
+
+      <TestimonialsSection
+        title="Trusted by Customers Across Kumasi"
+        intro="From business cards and flyers to banners, school projects, and custom gifts, these are real Google reviews from customers who have worked with ChromInk."
+      />
+
       {/* Industries */}
       <section className="section-padding bg-white">
         <div className="max-w-7xl mx-auto text-center">
@@ -325,6 +412,54 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="section-padding bg-gray-50 border-y border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter uppercase">
+              Local Printing Support Across <span className="text-brand-cyan">Kumasi</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              ChromInk serves businesses, schools, churches, and event planners across {businessInfo.address.locality} and the Ashanti Region from our base at {businessInfo.address.streetAddress}.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="bg-white border border-gray-100 p-8 shadow-sm">
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-6">Our Service Areas</h3>
+              <div className="flex flex-wrap gap-3">
+                {localAreas.map((area) => (
+                  <Link
+                    key={area.path}
+                    to={area.path}
+                    className="px-4 py-3 border border-gray-100 text-sm font-bold uppercase tracking-widest text-gray-600 hover:border-brand-cyan hover:text-brand-cyan transition-colors"
+                  >
+                    {area.area}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-brand-black text-white p-8 shadow-sm">
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-6">Visit or Contact ChromInk</h3>
+              <div className="space-y-4 text-gray-300">
+                <p>{businessInfo.address.streetAddress}</p>
+                <p>{businessInfo.address.locality}, {businessInfo.address.region}, {businessInfo.address.country}</p>
+                <p>{businessInfo.phoneDisplay}</p>
+                <p>{businessInfo.email}</p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href={businessInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="btn-secondary border-white text-white hover:bg-white hover:text-brand-black">
+                  Open Map
+                </a>
+                <a href={businessInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  WhatsApp Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="section-padding bg-brand-cyan relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -337,8 +472,8 @@ const Home = () => {
                 Get a professional quote for your printing and branding needs in Kumasi today.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to="/contact" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-                  Request a Quote
+                <Link to="/store" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+                  Visit Our Store
                 </Link>
                 <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
                   WhatsApp Us

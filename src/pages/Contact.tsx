@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Header, Footer } from '../components/Layout';
 import { MessageCircle, Phone, Mail, MapPin, Send, UploadCloud, Clock, ShieldCheck, Star } from 'lucide-react';
+import { businessInfo, fullAddress } from '../seo/businessInfo';
+import { localAreas } from '../content/localAreas';
 
 const Contact = () => {
   return (
@@ -57,10 +60,10 @@ const Contact = () => {
             
             <div className="space-y-10">
               {[
-                { icon: <MessageCircle className="text-brand-cyan" />, title: "WhatsApp", detail: "+233 59 332 1151", sub: "Fastest for quick questions and quotes.", link: "https://wa.me/233593321151" },
-                { icon: <Phone className="text-brand-magenta" />, title: "Phone", detail: "+233 59 332 1151", sub: "Available Mon-Sat, 8am - 6pm.", link: "tel:+233593321151" },
-                { icon: <Mail className="text-brand-yellow" />, title: "Email", detail: "print@chromink.co", sub: "For detailed project briefs and files.", link: "mailto:print@chromink.co" },
-                { icon: <MapPin className="text-brand-cyan" />, title: "Location", detail: "Kumasi, Ashanti Region, Ghana", sub: "Visit us for consultations and pickups.", link: "https://www.google.com/maps/place/ChromInk/@6.7130822,-1.5587749,16z/" }
+                { icon: <MessageCircle className="text-brand-cyan" />, title: "WhatsApp", detail: businessInfo.phoneDisplay, sub: "Fastest for quick questions and quotes.", link: businessInfo.whatsappUrl },
+                { icon: <Phone className="text-brand-magenta" />, title: "Phone", detail: businessInfo.phoneDisplay, sub: "Available Mon-Sat, 8am - 6pm.", link: `tel:${businessInfo.phoneRaw}` },
+                { icon: <Mail className="text-brand-yellow" />, title: "Email", detail: businessInfo.email, sub: "For detailed project briefs and files.", link: `mailto:${businessInfo.email}` },
+                { icon: <MapPin className="text-brand-cyan" />, title: "Location", detail: fullAddress, sub: "Visit us for consultations and pickups.", link: businessInfo.mapUrl }
               ].map((item, i) => (
                 <a key={i} href={item.link} target={item.link.startsWith('http') ? "_blank" : undefined} rel={item.link.startsWith('http') ? "noopener noreferrer" : undefined} className="flex gap-6 group hover:translate-x-2 transition-transform duration-300">
                   <div className="w-14 h-14 bg-gray-50 flex items-center justify-center shrink-0 group-hover:bg-brand-black transition-colors duration-300">
@@ -92,12 +95,30 @@ const Contact = () => {
                 INK
               </div>
             </div>
+
+            <div className="mt-12 bg-gray-50 p-8 border border-gray-100">
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-6">Areas We Commonly Serve</h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                We regularly support customers across {businessInfo.address.locality}, including quick-turn jobs for businesses and events in these nearby areas.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {localAreas.map((area) => (
+                  <Link
+                    key={area.path}
+                    to={area.path}
+                    className="px-4 py-3 bg-white border border-gray-100 text-sm font-bold uppercase tracking-widest text-gray-600 hover:border-brand-cyan hover:text-brand-cyan transition-colors"
+                  >
+                    {area.area}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Quote Request Form */}
           <div id="quote-form" className="bg-gray-50 p-8 md:p-12 border border-gray-100 shadow-2xl">
             <h2 className="text-3xl font-black mb-8 tracking-tighter uppercase">Request a Quote</h2>
-            <form action="https://formspree.io/f/print@chromink.co" method="POST" className="space-y-6">
+            <form action={`https://formspree.io/f/${businessInfo.email}`} method="POST" className="space-y-6">
               <input type="hidden" name="_subject" value="New Quote Request from ChromInk Website" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -167,7 +188,7 @@ const Contact = () => {
               </p>
             </div>
             <a 
-              href="https://www.google.com/maps/place/ChromInk/@6.7130822,-1.5587749,16z/" 
+              href={businessInfo.mapUrl}
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-secondary flex items-center gap-2"
@@ -223,10 +244,10 @@ const Contact = () => {
             Experience the best printing and branding service in Kumasi.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+            <a href={businessInfo.whatsappUrl} target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
               WhatsApp Us Now
             </a>
-            <a href="tel:+233593321151" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+            <a href={`tel:${businessInfo.phoneRaw}`} className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
               Call Us Directly
             </a>
           </div>

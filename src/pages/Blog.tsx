@@ -16,13 +16,22 @@ const Blog = () => {
       link: "/blog/banner-printing-cost-kumasi"
     },
     {
+      title: "Birthday present ideas in Kumasi that feel personal",
+      excerpt: "Explore meaningful birthday gift ideas, from framed memories and custom apparel to mugs and keepsakes that can be personalized for loved ones.",
+      category: "Gift Ideas",
+      date: "April 16, 2026",
+      image: "/images/present2.jpg",
+      alt: "Personalized birthday present ideas from ChromInk in Kumasi",
+      link: "/blog/birthday-present-ideas"
+    },
+    {
       title: "Best ways to use stickers for business branding",
       excerpt: "Discover creative ways to use custom stickers and labels to enhance your product packaging and brand visibility in Ghana.",
       category: "Branding",
       date: "March 28, 2026",
       image: "https://customlabels.net/wp-content/uploads/2017/08/business-stickers-4.jpg",
       alt: "Custom product labels and stickers for Ghanaian brands",
-      link: "/blog"
+      link: "/blog/sticker-branding"
     },
     {
       title: "How custom t-shirts help promote your event",
@@ -31,7 +40,7 @@ const Blog = () => {
       date: "March 15, 2026",
       image: "https://i.pinimg.com/1200x/dd/c0/07/ddc00798e5bdf2080c57738cd5aa24f3.jpg",
       alt: "Branded t-shirts for events in Kumasi, Ghana",
-      link: "/blog"
+      link: "/blog/custom-tshirts-events"
     },
     {
       title: "Why shop signage matters for small businesses in Kumasi",
@@ -40,7 +49,7 @@ const Blog = () => {
       date: "March 02, 2026",
       image: "https://printplanetghana.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-11-at-7.40.11-PM-1-edited.jpeg",
       alt: "Professional shop signage in Kumasi, Ghana",
-      link: "/blog"
+      link: "/blog/shop-signage-kumasi"
     },
     {
       title: "How to prepare files for professional printing",
@@ -49,7 +58,7 @@ const Blog = () => {
       date: "February 20, 2026",
       image: "/images/quality-check.png",
       alt: "Graphic design and file preparation for printing in Ghana",
-      link: "/blog"
+      link: "/blog/file-preparation-printing"
     }
   ];
 
@@ -139,6 +148,7 @@ const Blog = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: 'Banner Printing', link: '/services/banner-printing' },
+              { name: 'Custom Gift Presents', link: '/services/present' },
               { name: 'Business Signage', link: '/services/business-signage' },
               { name: 'T-Shirt Printing', link: '/services/t-shirt-printing' },
             ].map((service, i) => (

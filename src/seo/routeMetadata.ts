@@ -1,3 +1,5 @@
+import { localAreas } from '../content/localAreas';
+
 export const SITE_URL = 'https://chromink.co';
 
 type Breadcrumb = {
@@ -31,7 +33,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'ChromInk offers professional printing services in Kumasi, Ghana, including banner printing, business signage, t-shirt branding, vehicle branding, and custom printing.',
     keywords:
       'printing services in Kumasi, banner printing Kumasi, branding company Kumasi, business signage Kumasi, ChromInk Ghana',
-    image: `${SITE_URL}/images/about-story.png`,
+    image: `${SITE_URL}/images/service-banner.png`,
     imageAlt: 'ChromInk professional printing studio in Kumasi',
     type: 'website',
     breadcrumbs: [{ name: 'Home', path: '/' }],
@@ -42,13 +44,26 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Learn about ChromInk, a Kumasi printing and branding company helping businesses, churches, schools, and events with premium print solutions.',
     keywords:
       'about ChromInk, printing company Kumasi, branding experts Kumasi, local printing business Ghana',
-    image:
-      'https://i.pinimg.com/736x/c7/9d/75/c79d75c78f834a46b38dddfb2a31b2a5.jpg',
+    image: `${SITE_URL}/images/about-story.png`,
     imageAlt: 'ChromInk printing and branding team in Kumasi',
     type: 'website',
     breadcrumbs: [
       { name: 'Home', path: '/' },
       { name: 'About', path: '/about' },
+    ],
+  },
+  '/careers': {
+    title: 'Careers at ChromInk | Printing and Branding Jobs in Kumasi',
+    description:
+      'Apply for careers at ChromInk in Kumasi, including roles in large format printing, sales and social media growth, and delivery operations.',
+    keywords:
+      'ChromInk careers, printing jobs Kumasi, large format operator Kumasi, sales job Kumasi, delivery rider job Kumasi',
+    image: `${SITE_URL}/images/hero-printer.png`,
+    imageAlt: 'Careers and team opportunities at ChromInk in Kumasi',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Careers', path: '/careers' },
     ],
   },
   '/contact': {
@@ -71,7 +86,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Read ChromInk blog posts for printing tips in Kumasi, branding ideas for Ghanaian businesses, and practical guides on print pricing and file preparation.',
     keywords:
       'printing tips Kumasi, branding ideas Ghana, print pricing guide Kumasi, ChromInk blog',
-    image: `${SITE_URL}/social-preview.png`,
+    image: `${SITE_URL}/images/service-banner.png`,
     imageAlt: 'ChromInk blog for printing and branding tips',
     type: 'blog',
     breadcrumbs: [
@@ -103,6 +118,27 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       tags: ['Banner Printing', 'Pricing', 'Kumasi', 'Marketing'],
     },
   },
+  '/blog/birthday-present-ideas': {
+    title: 'Birthday Present Ideas in Kumasi | Personalized Gift Ideas by ChromInk',
+    description:
+      'Explore birthday present ideas in Kumasi, including personalized t-shirts, mugs, picture frames, and keepsake gifts designed by ChromInk.',
+    keywords:
+      'birthday present ideas Kumasi, personalized gifts Kumasi, birthday gift printing Ghana, custom birthday gifts Kumasi',
+    image: `${SITE_URL}/images/present2.jpg`,
+    imageAlt: 'Personalized birthday present ideas by ChromInk in Kumasi',
+    type: 'article',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Birthday Present Ideas', path: '/blog/birthday-present-ideas' },
+    ],
+    article: {
+      publishedTime: '2026-04-16T10:00:00+00:00',
+      modifiedTime: '2026-04-16T10:00:00+00:00',
+      section: 'Gift Ideas',
+      tags: ['Birthday Gifts', 'Personalized Gifts', 'Kumasi', 'Presents'],
+    },
+  },
   '/services': {
     title: 'Printing Services in Kumasi | Banners, Signage, T-Shirts, and More',
     description:
@@ -117,14 +153,69 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       { name: 'Services', path: '/services' },
     ],
   },
+  '/store': {
+    title: 'ChromInk Store | Printing Products, T-Shirts, Banners, Labels, and Gifts',
+    description:
+      'Shop ChromInk printing products in Kumasi, including custom t-shirts, stickers, labels, posters, banners, business cards, packaging, engraving, wall canvases, and promotional items.',
+    keywords:
+      'ChromInk store, printing products Kumasi, t-shirt printing shop, sticker labels Kumasi, banner ordering Ghana',
+    image: `${SITE_URL}/images/tshirt-sample.png`,
+    imageAlt: 'ChromInk ecommerce product catalog',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Store', path: '/store' },
+    ],
+  },
+  '/products': {
+    title: 'ChromInk Products | Printing Catalog in Kumasi',
+    description:
+      'Browse ChromInk products and request WhatsApp checkout for custom print orders, sizes, finishes, and product variants.',
+    keywords:
+      'ChromInk products, printing catalog Kumasi, custom print orders Ghana',
+    image: `${SITE_URL}/images/sticker-sample.png`,
+    imageAlt: 'ChromInk products catalog',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Products', path: '/products' },
+    ],
+  },
+  '/categories': {
+    title: 'ChromInk Categories | Browse Printing Products by Service',
+    description:
+      'Browse ChromInk store categories including t-shirt printing, stickers, banners, posters, packaging, engraving, wall canvases, and promotional items.',
+    keywords:
+      'ChromInk categories, printing categories Kumasi, t-shirt labels banners posters Ghana',
+    image: `${SITE_URL}/images/service-banner.png`,
+    imageAlt: 'ChromInk product categories',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Categories', path: '/categories' },
+    ],
+  },
+  '/admin': {
+    title: 'ChromInk Admin | Store Dashboard',
+    description:
+      'ChromInk store dashboard for managing live products, variants, finishes, visibility, availability, and stored inquiries.',
+    keywords:
+      'ChromInk admin, product dashboard, ecommerce catalog',
+    image: `${SITE_URL}/images/service-banner.png`,
+    imageAlt: 'ChromInk admin dashboard',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Admin', path: '/admin' },
+    ],
+  },
   '/services/banner-printing': {
     title: 'Banner Printing in Kumasi | Vinyl, Mesh, Church, and Event Banners',
     description:
       'Get professional banner printing in Kumasi for shops, churches, funerals, events, promotions, and outdoor advertising with fast turnaround from ChromInk.',
     keywords:
       'banner printing Kumasi, vinyl banners Kumasi, church banners Ghana, event banners Kumasi, funeral banners Kumasi',
-    image:
-      'https://i.pinimg.com/1200x/2c/c1/fc/2cc1fc19911d361b0468bc27e98d2794.jpg',
+    image: `${SITE_URL}/images/banner-sample.png`,
     imageAlt: 'Banner printing services in Kumasi',
     type: 'service',
     serviceName: 'Banner Printing',
@@ -140,8 +231,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'ChromInk designs and installs business signage in Kumasi, including shop signboards, storefront branding, wall branding, window graphics, and outdoor signs.',
     keywords:
       'business signage Kumasi, shop signboards Kumasi, storefront branding Ghana, 3D letters Kumasi, outdoor signs Kumasi',
-    image:
-      'https://i.pinimg.com/736x/f9/44/8e/f9448ebce9b13d028142d0d55c483e7c.jpg',
+    image: `${SITE_URL}/images/service-signage.png`,
     imageAlt: 'Business signage and shop branding in Kumasi',
     type: 'service',
     serviceName: 'Business Signage',
@@ -157,8 +247,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Order custom t-shirt printing in Kumasi for uniforms, churches, schools, campaigns, events, and promotional apparel with ChromInk.',
     keywords:
       't-shirt printing Kumasi, custom shirts Ghana, branded apparel Kumasi, event t-shirts Kumasi, church shirts Ghana',
-    image:
-      'https://i.pinimg.com/1200x/da/f0/24/daf0246a43f00f50ce98afbe7f9869ae.jpg',
+    image: `${SITE_URL}/images/tshirt-sample.png`,
     imageAlt: 'Custom t-shirt printing in Kumasi',
     type: 'service',
     serviceName: 'T-Shirt Printing',
@@ -174,8 +263,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Get high-quality sticker printing in Kumasi for product labels, branding stickers, vinyl decals, packaging, and promotional campaigns.',
     keywords:
       'sticker printing Kumasi, product labels Kumasi, vinyl decals Ghana, custom labels Kumasi',
-    image:
-      'https://i.pinimg.com/1200x/5f/3a/d5/5f3ad55ae3b84c592f101eacbfa0f303.jpg',
+    image: `${SITE_URL}/images/sticker-sample.png`,
     imageAlt: 'Sticker printing and labels in Kumasi',
     type: 'service',
     serviceName: 'Sticker Printing',
@@ -191,8 +279,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'ChromInk offers flyer printing in Kumasi for promotions, church programs, events, brochures, handbills, and business marketing campaigns.',
     keywords:
       'flyer printing Kumasi, brochure printing Ghana, handbills Kumasi, marketing materials Kumasi',
-    image:
-      'https://i.pinimg.com/1200x/a7/a6/e6/a7a6e61acc5d9cc11ea6cdd181a7dc30.jpg',
+    image: `${SITE_URL}/images/flyer-sample.png`,
     imageAlt: 'Flyer printing services in Kumasi',
     type: 'service',
     serviceName: 'Flyer Printing',
@@ -208,8 +295,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Print posters in Kumasi for events, advertising, product promotions, church programs, and branded indoor displays with ChromInk.',
     keywords:
       'poster printing Kumasi, event posters Ghana, advertising posters Kumasi, promotional posters Ghana',
-    image:
-      'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1920&q=80',
+    image: `${SITE_URL}/images/poster-sample.png`,
     imageAlt: 'Poster printing services in Kumasi',
     type: 'service',
     serviceName: 'Poster Printing',
@@ -225,8 +311,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Choose large format printing in Kumasi for backdrops, exhibition displays, wide-format branding, promotional graphics, and high-visibility event materials.',
     keywords:
       'large format printing Kumasi, wide format printing Ghana, backdrops Kumasi, exhibition displays Kumasi',
-    image:
-      'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1920&q=80',
+    image: `${SITE_URL}/images/large-format-sample.png`,
     imageAlt: 'Large format printing services in Kumasi',
     type: 'service',
     serviceName: 'Large Format Printing',
@@ -242,8 +327,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'ChromInk provides vehicle branding in Kumasi for cars, vans, fleets, decals, partial wraps, and moving business advertising.',
     keywords:
       'vehicle branding Kumasi, car branding Ghana, van branding Kumasi, fleet graphics Ghana, car wraps Kumasi',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt04c_C1Q1ln6vGGIrSn5QwCZxbwv6Jg-bFne5Qlt_RDWzQbdKj03dUwU&s=10',
+    image: `${SITE_URL}/images/vehicle-branding-sample.png`,
     imageAlt: 'Vehicle branding services in Kumasi',
     type: 'service',
     serviceName: 'Vehicle Branding',
@@ -259,8 +343,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Get fast document printing in Kumasi for reports, office documents, manuals, school projects, photocopying, and binding services.',
     keywords:
       'document printing Kumasi, photocopying Kumasi, binding services Ghana, office printing Kumasi',
-    image:
-      'https://i.pinimg.com/1200x/fa/f4/41/faf4417ab4fba29077eb1a751d1c9744.jpg',
+    image: `${SITE_URL}/images/document-printing-sample.png`,
     imageAlt: 'Document printing services in Kumasi',
     type: 'service',
     serviceName: 'Document Printing',
@@ -276,8 +359,7 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       'Request custom printing in Kumasi for event branding, mixed print packages, promotional items, business materials, and one-off special orders.',
     keywords:
       'custom printing Kumasi, special print orders Ghana, event branding Kumasi, promotional items Kumasi',
-    image:
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1920&q=80',
+    image: `${SITE_URL}/images/custom-orders-sample.png`,
     imageAlt: 'Custom printing solutions in Kumasi',
     type: 'service',
     serviceName: 'Custom Printing',
@@ -303,10 +385,163 @@ export const routeMetadata: Record<string, RouteMetadata> = {
       { name: 'Picture Frames', path: '/services/picture-frame' },
     ],
   },
+  '/services/present': {
+    title: 'Personalized Present Gifts in Kumasi | Custom Gifts for Birthdays and Special Occasions',
+    description:
+      'Order personalized present gifts in Kumasi from ChromInk, including custom t-shirts, mugs, picture frames, keepsakes, and surprise gift items for loved ones.',
+    keywords:
+      'personalized gifts Kumasi, present gifts Kumasi, birthday gifts Kumasi, custom mugs Kumasi, custom picture frames Kumasi',
+    image: `${SITE_URL}/images/present1.jpg`,
+    imageAlt: 'Personalized present gifts and custom keepsakes by ChromInk in Kumasi',
+    type: 'service',
+    serviceName: 'Present Gifts',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Services', path: '/services' },
+      { name: 'Present Gifts', path: '/services/present' },
+    ],
+  },
+  '/blog/sticker-branding': {
+    title: 'Sticker Branding & Labels in Kumasi | Design, Printing, and Tips',
+    description:
+      'Learn effective sticker branding strategies for Kumasi businesses, including label design tips, durability, and how to create memorable brand stickers.',
+    keywords:
+      'sticker branding Kumasi, vinyl stickers Ghana, product labels Kumasi, branding with stickers',
+    image: `${SITE_URL}/images/sticker-sample.png`,
+    imageAlt: 'Sticker branding and label design for Kumasi businesses',
+    type: 'article',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Sticker Branding & Labels', path: '/blog/sticker-branding' },
+    ],
+    article: {
+      publishedTime: '2026-04-10T10:00:00+00:00',
+      modifiedTime: '2026-04-10T10:00:00+00:00',
+      section: 'Branding Guide',
+      tags: ['Stickers', 'Branding', 'Labels', 'Design'],
+    },
+  },
+  '/blog/custom-tshirts-events': {
+    title: 'Custom T-Shirts for Events in Kumasi | Design and Ordering Guide',
+    description:
+      'Plan custom t-shirt printing for your Kumasi event with design tips, turnaround times, bulk pricing, and how to order branded apparel.',
+    keywords:
+      'event t-shirts Kumasi, custom apparel Ghana, branded uniforms Kumasi, t-shirt printing for events',
+    image: `${SITE_URL}/images/tshirt-sample.png`,
+    imageAlt: 'Custom branded t-shirts for events in Kumasi',
+    type: 'article',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Custom T-Shirts for Events', path: '/blog/custom-tshirts-events' },
+    ],
+    article: {
+      publishedTime: '2026-04-11T10:00:00+00:00',
+      modifiedTime: '2026-04-11T10:00:00+00:00',
+      section: 'Event Planning',
+      tags: ['T-Shirts', 'Events', 'Apparel', 'Branding'],
+    },
+  },
+  '/blog/shop-signage-kumasi': {
+    title: 'Shop Signage Best Practices in Kumasi | Design and Installation Tips',
+    description:
+      'Create eye-catching shop signage in Kumasi with professional design tips, material choices, lighting, and installation strategies for maximum visibility.',
+    keywords:
+      'shop signage Kumasi, business signs Ghana, storefront branding tips, shop design Kumasi',
+    image: `${SITE_URL}/images/service-signage.png`,
+    imageAlt: 'Professional shop signage design and installation in Kumasi',
+    type: 'article',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Shop Signage Best Practices', path: '/blog/shop-signage-kumasi' },
+    ],
+    article: {
+      publishedTime: '2026-04-12T10:00:00+00:00',
+      modifiedTime: '2026-04-12T10:00:00+00:00',
+      section: 'Business Guide',
+      tags: ['Signage', 'Design', 'Branding', 'Business'],
+    },
+  },
+  '/blog/file-preparation-printing': {
+    title: 'File Preparation Guide for Printing in Kumasi | Specs, Formats, and Tips',
+    description:
+      'Prepare your files correctly for printing in Kumasi with detailed specifications, recommended formats, DPI requirements, and common mistakes to avoid.',
+    keywords:
+      'file preparation printing Kumasi, print specifications Ghana, correct file formats printing, DPI requirements',
+    image: `${SITE_URL}/images/document-printing-sample.png`,
+    imageAlt: 'File preparation guide for printing services',
+    type: 'article',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'File Preparation Guide', path: '/blog/file-preparation-printing' },
+    ],
+    article: {
+      publishedTime: '2026-04-13T10:00:00+00:00',
+      modifiedTime: '2026-04-13T10:00:00+00:00',
+      section: 'Technical Guide',
+      tags: ['File Preparation', 'Printing', 'Technical', 'Design'],
+    },
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy | ChromInk Printing Services',
+    description:
+      'ChromInk privacy policy outlines how we collect, use, and protect your personal information when you use our services in Kumasi, Ghana.',
+    keywords:
+      'privacy policy, data protection, ChromInk privacy, personal information',
+    image: `${SITE_URL}/images/service-banner.png`,
+    imageAlt: 'ChromInk privacy policy and data protection',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Privacy Policy', path: '/privacy-policy' },
+    ],
+  },
+  '/terms-of-service': {
+    title: 'Terms of Service | ChromInk Printing',
+    description:
+      'Read the complete terms of service for ChromInk printing and branding services, including ordering, payment, cancellations, and policies.',
+    keywords:
+      'terms of service, service terms, ChromInk terms, printing agreement',
+    image: `${SITE_URL}/images/service-banner.png`,
+    imageAlt: 'ChromInk terms of service and service agreements',
+    type: 'website',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Terms of Service', path: '/terms-of-service' },
+    ],
+  },
+  ...Object.fromEntries(
+    localAreas.map((area) => [
+      area.path,
+      {
+        title: area.seoTitle,
+        description: area.seoDescription,
+        keywords: area.seoKeywords,
+        image: `${SITE_URL}${area.seoImage}`,
+        imageAlt: area.seoImageAlt,
+        type: 'service' as const,
+        serviceName: `Printing in ${area.area}`,
+        breadcrumbs: [
+          { name: 'Home', path: '/' },
+          { name: `Printing in ${area.area}`, path: area.path },
+        ],
+      },
+    ])
+  ),
 };
 
 export const getCanonicalUrl = (path: string) =>
-  path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
+  path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}/`;
 
-export const getRouteMetadata = (path: string) =>
-  routeMetadata[path] ?? routeMetadata['/'];
+export const getRouteMetadata = (path: string) => {
+  const productMatch = path.match(/^\/products\/([^/]+)$/);
+
+  if (productMatch) {
+    return routeMetadata['/products'];
+  }
+
+  return routeMetadata[path] ?? routeMetadata['/'];
+};

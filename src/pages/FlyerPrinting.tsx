@@ -112,17 +112,16 @@ const FlyerPrinting = () => {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Professional Flyer and Brochure Printing - Authentic Ghanaian Context */}
         <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('https://i.pinimg.com/1200x/a7/a6/e6/a7a6e61acc5d9cc11ea6cdd181a7dc30.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
         >
-          <OptimizedImage 
-            src="https://i.pinimg.com/1200x/a7/a6/e6/a7a6e61acc5d9cc11ea6cdd181a7dc30.jpg" 
-            alt="Flyer and Brochure Printing Services in Kumasi" 
-            className="w-full h-full object-cover"
-            priority
-          />
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </motion.div>
 
@@ -330,9 +329,9 @@ const FlyerPrinting = () => {
                 <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
                   WhatsApp Us Now
                 </a>
-                <Link to="/contact" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-                  Get a Quote
-                </Link>
+                <Link to="/store" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+              Visit Store
+            </Link>
               </div>
             </>
           </Reveal>

@@ -5,4 +5,5 @@ _dist_/
 .DS_Store
 .env
 .env.local
+.data/
 npm-debug.log*

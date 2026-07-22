@@ -91,13 +91,14 @@ const VehicleBranding = () => {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Professional Vehicle Branding in Kumasi */}
-        <div className="absolute inset-0 z-0">
-          <OptimizedImage 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt04c_C1Q1ln6vGGIrSn5QwCZxbwv6Jg-bFne5Qlt_RDWzQbdKj03dUwU&s=10" 
-            alt="Vehicle Branding Services in Kumasi" 
-            className="w-full h-full object-cover"
-            priority
-          />
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrt04c_C1Q1ln6vGGIrSn5QwCZxbwv6Jg-bFne5Qlt_RDWzQbdKj03dUwU&s=10')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
 
@@ -255,8 +256,8 @@ const VehicleBranding = () => {
             <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
               WhatsApp Us Now
             </a>
-            <Link to="/contact" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-              Get a Quote
+            <Link to="/store" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+              Visit Store
             </Link>
           </div>
         </div>

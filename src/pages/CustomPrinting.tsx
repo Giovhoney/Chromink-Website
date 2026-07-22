@@ -91,13 +91,14 @@ const CustomPrinting = () => {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden px-4">
         {/* HERO BACKGROUND IMAGE: Creative Custom Printing Solutions */}
-        <div className="absolute inset-0 z-0">
-          <OptimizedImage 
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1920&q=80" 
-            alt="Custom Printing and Special Orders in Kumasi" 
-            className="w-full h-full object-cover"
-            priority
-          />
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1920&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
           <div className="absolute inset-0 bg-brand-black/75 backdrop-blur-[1px]"></div>
         </div>
 
@@ -260,8 +261,8 @@ const CustomPrinting = () => {
             <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
               WhatsApp Us Now
             </a>
-            <Link to="/contact" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-              Get a Quote
+            <Link to="/store" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+              Visit Store
             </Link>
           </div>
         </div>

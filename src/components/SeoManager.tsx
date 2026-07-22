@@ -6,6 +6,8 @@ import {
   getRouteMetadata,
   type RouteMetadata,
 } from '../seo/routeMetadata';
+import { businessInfo } from '../seo/businessInfo';
+import { testimonials, testimonialsAggregate } from '../content/testimonials';
 
 const upsertMeta = (
   selector: string,
@@ -55,31 +57,32 @@ const upsertJsonLd = (id: string, data: object | object[]) => {
 const createLocalBusinessSchema = (metadata: RouteMetadata) => ({
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'ChromInk',
+  name: businessInfo.name,
   image: metadata.image,
   '@id': SITE_URL,
   url: SITE_URL,
-  telephone: '+233593321151',
-  email: 'print@chromink.co',
+  telephone: businessInfo.phoneRaw,
+  email: businessInfo.email,
   priceRange: '$$',
   description:
-    'ChromInk provides professional printing and branding services in Kumasi, Ghana.',
+    'ChromInk provides professional printing and branding services in Kumasi, Ashanti Region, Ghana.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Asokore-Mampong, Parkoso-Baubai Junction',
-    addressLocality: 'Kumasi',
-    addressRegion: 'Ashanti',
-    addressCountry: 'GH',
+    streetAddress: businessInfo.address.streetAddress,
+    addressLocality: businessInfo.address.locality,
+    addressRegion: businessInfo.address.region,
+    addressCountry: businessInfo.address.countryCode,
   },
   areaServed: {
     '@type': 'City',
-    name: 'Kumasi',
+    name: businessInfo.address.locality,
   },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 6.71322,
     longitude: -1.55873,
   },
+  hasMap: businessInfo.mapUrl,
   sameAs: [
     'https://instagram.com/chromink.co',
     'https://facebook.com/chromink.co',
@@ -98,6 +101,27 @@ const createLocalBusinessSchema = (metadata: RouteMetadata) => ({
     opens: '08:00',
     closes: '20:00',
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: testimonialsAggregate.ratingValue,
+    reviewCount: testimonialsAggregate.reviewCount,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: testimonials.slice(0, 8).map((item) => ({
+    '@type': 'Review',
+    reviewBody: item.quote,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: 5,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    author: {
+      '@type': 'Person',
+      name: item.author,
+    },
+  })),
 });
 
 const createBreadcrumbSchema = (metadata: RouteMetadata) => ({

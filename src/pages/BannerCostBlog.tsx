@@ -154,7 +154,7 @@ const BannerCostBlog = () => {
       </article>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
+      <section id="faq" className="section-padding bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black mb-16 tracking-tighter uppercase text-center">Banner Pricing FAQ</h2>
           <div className="space-y-6">
@@ -187,8 +187,8 @@ const BannerCostBlog = () => {
             <a href="https://wa.me/233593321151" target="_blank" rel="noopener noreferrer" className="bg-brand-black text-white px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
               WhatsApp Us Now
             </a>
-            <Link to="/contact" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
-              Get a Quote
+            <Link to="/store" className="bg-white text-brand-black px-12 py-6 font-black text-xl uppercase tracking-widest hover:scale-105 transition-transform">
+              Visit Store
             </Link>
           </div>
         </div>
